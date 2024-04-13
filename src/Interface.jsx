@@ -28,17 +28,38 @@ export const Interface = ({ valorInput, setValorInput }) => {
   }
 
   const subscripciones = () => {
-    
 
-
+    const serviciosMapeados = {
+      netflix: 'Netflix',
+      disneyPlus: 'Disney+',
+      hboMax: 'HBO Max',
+      starPlus: 'Star+',
+      primeVideo: 'Prime Video',
+      spotify: 'Spotify',
+      appleTv: 'Apple TV',
+      youtubePremium: 'YouTube Premium'
+    };
 
     return (
       <div className="subscripciones">
         <h2 className="h2Subscripciones">Subscripciones</h2>
+  
         {subs.map((sub, index) => (
           <div key={index} className="sub">
-            <img src={`../public/subs/${sub.servicio}.svg`} alt={sub.servicio} className="subImg"/>
-            <p>Servicio: {sub.servicio}, Valor: ${sub.valor}</p>
+            <section className="subImgCont">
+              <img src={`../public/subs/${sub.servicio}.svg`} alt={sub.servicio} className="subImg" />
+            </section>
+  
+            <section className="subText">
+              <span>
+                Servicio: {serviciosMapeados[sub.servicio]}: <b>${sub.valor}</b>.
+              </span>
+            </section>
+  
+            <section className="subButtons">
+              <button>Borrar</button>
+              <button>Editar</button>
+            </section>
           </div>
         ))}
       </div>

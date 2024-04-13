@@ -194,16 +194,34 @@
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 20px;
   background-color: #eef5fa;
-  padding: 5px;
   border-radius: 10px;
-  width: 50%;
+  width: 70%;
+  padding: 20px;
+  gap: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.subImg{
-  height: 100%;
+.subImgCont{
+  width: 15%;
+  
+}
+.subImg {
+  width: 100%;
+}
+
+.subText {
+  width: 70%;
+}
+.subText b {
+  color: green;
+}
+
+.subButtons {
+  width: 15%;
+}
+.subButtons button{
+  width: 100%;
+
 }
 
 
