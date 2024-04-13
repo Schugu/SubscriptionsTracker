@@ -28,7 +28,16 @@ export const Interface = ({ valorInput, setValorInput }) => {
   }
 
   const subscripciones = () => {
-
+    const handleEdit = (index, sub) => {
+      console.log('Editar suscripción en el índice:', index, sub.servicio);
+    }
+  
+    const handleDelete = (index, sub) => {
+      setValorGastado(valorGastado - sub.valor);
+      const newSubs = subs.filter((_, i) => i !== index);
+      setSubs(newSubs);
+    }
+  
     const serviciosMapeados = {
       netflix: 'Netflix',
       disneyPlus: 'Disney+',
@@ -39,7 +48,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
       appleTv: 'Apple TV',
       youtubePremium: 'YouTube Premium'
     };
-
+  
     return (
       <div className="subscripciones">
         <h2 className="h2Subscripciones">Subscripciones</h2>
@@ -57,8 +66,8 @@ export const Interface = ({ valorInput, setValorInput }) => {
             </section>
   
             <section className="subButtons">
-              <button>Borrar</button>
-              <button>Editar</button>
+              <button onClick={() => handleEdit(index, sub)}>Editar</button>
+              <button onClick={() => handleDelete(index, sub)}>Borrar</button>
             </section>
           </div>
         ))}
