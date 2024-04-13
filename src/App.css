@@ -3,7 +3,7 @@
   height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   padding: 10px;
   background-color: #379fed;
@@ -125,21 +125,27 @@
 
 
 /* INTERFACE */
-.interface {
+.articleInterface {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.interface {
+  width: 100%;
+  min-height: 35%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: flex-start;
   justify-content: space-around;
+  background-color: #81bcea;
 }
 /* Parte 1 */
 .tablaDeBalance{
-  border: 1px solid black;
-  padding: 20px;
-  height: 250px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,13 +161,11 @@
 }
 /* Parte 2 */
 .interfaceActions {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  height: 250px;
-  width: 400px;
+  height: 200px;
+  width: 300px;
   gap: 20px;
 }
 .formInterfaceActions{
@@ -173,6 +177,37 @@
 .interfaceActions input, .interfaceActions select {
   width: 80%;
 }
+/* Parte 3 */
+.subscripciones {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+.h2Subscripciones{
+  text-align: center;
+}
+.sub{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  background-color: #eef5fa;
+  padding: 5px;
+  border-radius: 10px;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.subImg{
+  height: 100%;
+}
+
+
+
 
 
 
