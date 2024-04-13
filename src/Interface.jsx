@@ -42,7 +42,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
         setValorGastado(valorGastado + nuevoValor);
         setSubs([...subs, { servicio: servicio, valor: valorServicio }]);
       } else {
-        alert('Error: El nuevo valor supera el presupuesto');
+        alert('Error!');
       }
     }
     setValorServicio('');
