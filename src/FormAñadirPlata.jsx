@@ -43,7 +43,7 @@ export const FomrAñadirPlata = ({ onSendData }) => {
         className="formAddMoney"
         onSubmit={handleSubmit}
       >
-        <h2>Agregar presupuesto</h2>
+        <h2 className="h2FormAddMoney">Presupuesto</h2>
 
         <div className="inputAndButtonForm">
           <input

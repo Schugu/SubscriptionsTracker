@@ -34,7 +34,9 @@ export const Interface = ({ valorInput, setValorInput }) => {
             </section>
             <section className="interfaceActions">
                 <h3>Agregar servicio</h3>
-                <form onSubmit={handleSubmit}>
+                <form 
+                    className="formInterfaceActions"
+                    onSubmit={handleSubmit}>
                     <select value={servicio} onChange={handleChangeSelect}>
                         <option value="">------- Elegir -------</option>
                         <option value="netflix">Netflix</option>

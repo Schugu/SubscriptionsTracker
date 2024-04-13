@@ -14,6 +14,8 @@
 .portadaSection {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -38,9 +40,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
   padding-top: 20px;
-  /* border-left: 2px solid black; */
 }
 .portadaFormTitulo {
   color: #f0f8ff;
@@ -48,6 +50,7 @@
   font-style: oblique;
   border-bottom: 2px solid #f0f8ff;
   font-size: 1.5em;
+  text-align: center;
 }
 
 
@@ -59,12 +62,16 @@
 
 /* FORM AGREGAR PLATA */
 .formAddMoney {
-  width: 70%;
-  padding: 20px;
+  width: 100%;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+.h2FormAddMoney{
+  color: #f0f8ff;
+  text-shadow: 1px 1px 2px black;
 }
 .inputAndButtonForm{
   width: 100%;
@@ -120,7 +127,7 @@
 /* INTERFACE */
 .interface {
   width: 100%;
-  border: 1px solid black;
+  height: 100%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +135,7 @@
   align-items: flex-start;
   justify-content: space-around;
 }
-
+/* Parte 1 */
 .tablaDeBalance{
   border: 1px solid black;
   padding: 20px;
@@ -136,27 +143,66 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 40px;
-  width: 40%;
+  gap: 20px;
+  width: 350px;
 }
-
 .balance-Datos {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
 }
+/* Parte 2 */
 .interfaceActions {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   padding: 20px;
   height: 250px;
-  width: 40%;
+  width: 400px;
+  gap: 20px;
+}
+.formInterfaceActions{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 .interfaceActions input, .interfaceActions select {
-  width: 100%;
+  width: 80%;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .main {
+    width: 100%;
+    height: 100vh ;
+    border-radius: 0;
+  }
+  .portadaSection {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+  }
+  .portadaArticle {
+    width: 100%;
+    height: 50%;
+  }
+  .portadaForm {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .portadaArticle {
+    height: 40%;
+  }
+  .portadaForm {
+    height: 50%;
+  }
 }
