@@ -1,4 +1,6 @@
 import { useState } from "react";
+import botonDelete from './assets/icons/botonDelete.svg'
+import botonEdit from './assets/icons/botonEdit.svg'
 
 export const Interface = ({ valorInput, setValorInput }) => {
   const [valorServicio, setValorServicio] = useState('');
@@ -99,8 +101,15 @@ export const Interface = ({ valorInput, setValorInput }) => {
             </section>
 
             <section className="subButtons">
-              <button onClick={() => handleEdit(index, sub)}>Editar</button>
-              <button onClick={() => handleDelete(index, sub)}>Borrar</button>
+              <button 
+                onClick={() => handleEdit(index, sub)}>
+                <img src={botonEdit} alt="BotonEdit" className="botonEdit"/>
+              </button>
+
+              <button 
+                onClick={() => handleDelete(index, sub)}>
+                <img src={botonDelete} alt="botonDelete" className="botonDelete"/>
+              </button>
             </section>
           </div>
         ))}
@@ -124,12 +133,12 @@ export const Interface = ({ valorInput, setValorInput }) => {
       </div>
 
       <div className="interfaceActions">
-          <h3>Agregar servicio</h3>
+          <h3 className="h3-interfaceActions">Agregar servicio</h3>
           <form
             className="formInterfaceActions"
             onSubmit={handleSubmit}>
-            <select value={servicio} onChange={handleChangeSelect}>
-              <option value="">------- Elegir -------</option>
+            <select value={servicio} onChange={handleChangeSelect} className="select-formInterfaceActions">
+              <option value="">Servicio</option>
               <option value="netflix">Netflix</option>
               <option value="disneyPlus">Disney Plus</option>
               <option value="hboMax">HBO Max</option>
@@ -140,6 +149,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
               <option value="youtubePremium">Youtube Premium</option>
             </select>
             <input
+              className="input-formInterfaceActions"
               value={valorServicio}
               onChange={handleChangeInput}
               type="number"
@@ -147,7 +157,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
               id=""
               placeholder="$2.500"
             />
-            <input type="submit" value='Agregar' />
+            <input type="submit" value='Agregar' className="buttonForm boton-InterfaceActions"/>
           </form>
       </div>
     </article>
