@@ -109,8 +109,8 @@ export const Interface = ({ valorInput, setValorInput }) => {
   }
 
   return (
-    <article className="articleInterface">
-      <div className="interface">
+    <article className="contenedorInterface">
+      <div className="balanceAndSubs">
         <section className="tablaDeBalance">
           <h3 className="h3-balance">Balance</h3>
           <article className="balance-Datos">
@@ -119,7 +119,11 @@ export const Interface = ({ valorInput, setValorInput }) => {
             <h3 className="h3-Balance">Gastado: ${valorGastado}</h3>
           </article>
         </section>
-        <section className="interfaceActions">
+
+        {subscripciones()}
+      </div>
+
+      <div className="interfaceActions">
           <h3>Agregar servicio</h3>
           <form
             className="formInterfaceActions"
@@ -145,10 +149,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
             />
             <input type="submit" value='Agregar' />
           </form>
-        </section>
       </div>
-
-      {subscripciones()}
     </article>
   );
 }

@@ -1,38 +1,41 @@
+/* CONTENEDOR BASE */
 .main {
-  width: 80%;
-  height: 80vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 10px;
-  background-color: #379fed;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  border-radius: 5px;
+  align-items: center;
 }
 
+/* SECCION PORTADA */
 .portadaSection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80vh;
+  background-color: #379fed;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  border-radius: 5px;
 }
 .portadaArticle {
   width: 60%;
   height: 100%;
   text-align: center;
   padding-top: 20px;
-  color: #f0f8ff;
-  text-shadow: 1px 1px 2px black;
-
+  
   background-image: url(../public/portada.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.h2Portada{
+  font-size: 1em;
+  color: #f0f8ff;
+  text-shadow: 1px 1px 2px black;
 }
 .portadaForm {
   width: 40%;
@@ -52,15 +55,7 @@
   font-size: 1.5em;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-/* FORM AGREGAR PLATA */
+/* SECCION PORTADA: FORM AGREGAR PLATA */
 .formAddMoney {
   width: 100%;
   padding: 0 20px;
@@ -123,50 +118,51 @@
 
 
 
-
 /* INTERFACE */
-.articleInterface {
+.contenedorInterface {
   width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 20px;
+}
+/* Parte 1 */
+.balanceAndSubs {
+  width: 80%;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  /* background-color: #81bcea; */
+  border: 1px solid black;
 }
-.interface {
-  width: 100%;
-  min-height: 35%;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: space-around;
-  background-color: #81bcea;
-}
-/* Parte 1 */
 .tablaDeBalance{
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 20px;
-  width: 350px;
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
 }
 .balance-Datos {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   gap: 10px;
   width: 100%;
+}
+.h3-balance {
+  text-align: center;
 }
 /* Parte 2 */
 .interfaceActions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 200px;
-  width: 300px;
+  height: 100%;
+  width: 20%;
   gap: 20px;
+  border: 1px solid black;
+  padding: 20px;
 }
 .formInterfaceActions{
   display: flex;
@@ -185,30 +181,28 @@
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  padding: 20px;
+  height: 100%;
 }
 .h2Subscripciones{
   text-align: center;
 }
 .sub{
-  height: 100px;
   display: flex;
   align-items: center;
   background-color: #eef5fa;
-  border-radius: 10px;
-  width: 70%;
+  border-radius: 50px;
+  width: 90%;
+  height: 70px;
   padding: 20px;
   gap: 20px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .subImgCont{
-  width: 15%;
-  
+  width: 10%;
 }
 .subImg {
   width: 100%;
 }
-
 .subText {
   width: 70%;
 }
@@ -217,10 +211,12 @@
 }
 
 .subButtons {
-  width: 15%;
+  width: 20%;
+  display: flex;
+  gap: 10px;
 }
 .subButtons button{
-  width: 100%;
+  /* width: 100%; */
 
 }
 
