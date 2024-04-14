@@ -225,6 +225,8 @@
 }
 .subImgCont{
   width: 20%;
+  pointer-events: none;
+  user-select: none;
 }
 .subImg {
   height: 100%;
@@ -242,6 +244,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  user-select: none;
 }
 .subButtons button{
   display: flex;
