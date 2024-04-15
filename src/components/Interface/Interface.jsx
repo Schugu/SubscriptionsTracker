@@ -1,11 +1,12 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 import './Interface.css'
 import botonDelete from '../../assets/icons/botonDelete.svg'
 import botonEdit from '../../assets/icons/botonEdit.svg'
 import PDFComponent from "../PDFComponent/PDFComponent.jsx"
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
-export const Interface = ({ valorInput, setValorInput }) => {
+export const Interface = ({ valorInput }) => {
   const [valorServicio, setValorServicio] = useState('');
   const [valorGastado, setValorGastado] = useState(0);
   const [servicio, setServicio] = useState('');
@@ -229,4 +230,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
       </div>
     </article>
   );
+}
+Interface.propTypes = {
+  valorInput: PropTypes.any.isRequired 
 }

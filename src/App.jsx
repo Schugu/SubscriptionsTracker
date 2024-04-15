@@ -15,7 +15,7 @@ function App() {
   return (
     <main className='main'>
       {isValid 
-        ? <Interface valorInput={valorInput} setValorInput={setValorInput} />
+        ? <Interface valorInput={valorInput}/>
         : <Portada onSendData={handleSendData} />
       }
     </main>
