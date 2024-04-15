@@ -7,6 +7,8 @@ export const Interface = ({ valorInput, setValorInput }) => {
   const [valorGastado, setValorGastado] = useState(0);
   const [servicio, setServicio] = useState('');
   const [subs, setSubs] = useState([]);
+  const [isValidServicio, setIsValidServicio] = useState(null);
+  const [isValidValorServicio, setIsValidValorServicio] = useState(null);
 
   const [editMode, setEditMode] = useState(false);
   const [editedIndex, setEditedIndex] = useState(null);
@@ -15,42 +17,77 @@ export const Interface = ({ valorInput, setValorInput }) => {
 
   const handleChangeSelect = (e) => {
     setServicio(e.target.value);
+    setIsValidServicio(e.target.value !== '' ? true : false); // Actualizar isValidServicio basado en la selección de servicio
   }
-
+  
   const handleChangeInput = (e) => {
     setValorServicio(e.target.value);
+    setIsValidValorServicio(e.target.value !== '' ? true : false); // Actualizar isValidValorServicio basado en el valor del servicio
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const nuevoValor = parseFloat(valorServicio);
-
-    if (editMode && nuevoValor > 0 && servicio !== '' && nuevoValor <= valorInput) {
-      // Modo de edición
-      const editedSubs = subs.map((item, index) => {
-        if (index === editedIndex) {
-          return { servicio: servicio, valor: valorServicio };
-        }
-        return item;
-      });
-      setSubs(editedSubs);
-      setEditMode(false); // Desactiva el modo de edición
-      setEditedIndex(null); // Reinicia el índice editado
-      const valorActual = subs[editedIndex].valor;
-      setValorGastado(valorGastado - valorActual + nuevoValor); // Actualiza el valor gastado
-    } else {
-      // Modo de agregar nuevo elemento
-      if (valorServicio > 0 && valorServicio <= valorDisp && servicio !== '') {
-        setValorGastado(valorGastado + nuevoValor);
-        setSubs([...subs, { servicio: servicio, valor: valorServicio }]);
-      } else {
-        alert('Error!');
+  
+    try {
+      // Verificar si no se ingresó un servicio
+      if (!servicio) {
+        setIsValidServicio(false);
+        throw new Error('Por favor elige un servicio.');
       }
+  
+      // Verificar si no se ingresó un monto
+      if (!valorServicio) {
+        setIsValidValorServicio(false);
+        throw new Error('Por favor ingresa un monto.');
+      }
+  
+      const nuevoValor = parseFloat(valorServicio);
+  
+      if (editMode && nuevoValor > 0 && nuevoValor <= valorInput) {
+        // Modo de edición
+        const editedSubs = subs.map((item, index) => {
+          if (index === editedIndex) {
+            return { servicio: servicio, valor: valorServicio };
+          }
+          return item;
+        });
+        setSubs(editedSubs);
+        setEditMode(false); // Desactiva el modo de edición
+        setEditedIndex(null); // Reinicia el índice editado
+        const valorActual = subs[editedIndex].valor;
+        setValorGastado(valorGastado - valorActual + nuevoValor); // Actualiza el valor gastado
+      } else {
+        // Modo de agregar nuevo elemento
+        if (nuevoValor > 0 && nuevoValor <= valorDisp) {
+          setValorGastado(valorGastado + nuevoValor);
+          setSubs([...subs, { servicio: servicio, valor: valorServicio }]);
+        } else {
+          throw new Error('El monto ingresado no es válido.');
+        }
+      }
+      setIsValidServicio(true);
+      setIsValidValorServicio(true);
+      
+      setValorServicio('');
+      setServicio('');
+    } catch (error) {
+      // Manejo del error
+      alert(error.message);
     }
-    setValorServicio('');
-    setServicio('');
   }
-
+  
+  const editarError1 = () => {
+    if (isValidServicio === false && !servicio)  {
+      return { border: '3px solid #ff0000' };
+    } 
+    return {};
+  }
+  const editarError2 = () => {
+    if (isValidValorServicio === false && !valorServicio) {
+      return { border: '3px solid #ff0000' }; 
+    }
+    return {};
+  }
 
 
 
@@ -137,7 +174,12 @@ export const Interface = ({ valorInput, setValorInput }) => {
           <form
             className="formInterfaceActions"
             onSubmit={handleSubmit}>
-            <select value={servicio} onChange={handleChangeSelect} className="select-formInterfaceActions">
+            <select 
+              value={servicio} 
+              onChange={handleChangeSelect} 
+              className="select-formInterfaceActions"
+              style={editarError1()}
+            >
               <option value="">Servicio</option>
               <option value="netflix">Netflix</option>
               <option value="disneyPlus">Disney Plus</option>
@@ -149,6 +191,7 @@ export const Interface = ({ valorInput, setValorInput }) => {
               <option value="youtubePremium">Youtube Premium</option>
             </select>
             <input
+              style={editarError2()}
               className="input-formInterfaceActions"
               value={valorServicio}
               onChange={handleChangeInput}
