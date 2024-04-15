@@ -183,6 +183,9 @@
   padding: 5px;
   box-shadow: rgba(202, 223, 251, 0.16) 0px 3px 6px, rgba(202, 223, 251, 0.23) 0px 3px 6px;
 }
+.select-formInterfaceActions{
+  font-size: 1em;
+}
 .input-formInterfaceActions {
   padding-left: 10px;
 }
@@ -246,7 +249,7 @@
 }
 
 .subButtons {
-  width: 10%;
+  min-width: 10%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -296,7 +299,7 @@
 @media screen and (max-width: 750px) {
   .main {
     width: 100%;
-    height: 100vh ;
+    height: 100%;
     border-radius: 0;
   }
   .portadaSection {
@@ -312,6 +315,59 @@
   .portadaForm {
     width: 100%;
     height: 50%;
+  }
+
+  .contenedorInterface {
+    display: flex;
+    flex-direction: column-reverse; /* Restaurar el orden de los elementos */
+    align-items: center;
+    padding: 10px;
+    height: 100vh; /* Mantener la altura de la ventana */
+    overflow-y: auto; /* Habilitar desplazamiento vertical cuando sea necesario */
+}
+  .interfaceActions{ /* Contenedor importante */
+    width: 100%;
+    border: 2px solid #2779b8;
+    justify-content: space-between;
+    height: auto;
+  }
+  .balanceAndSubs{ /* Contenedor importante */
+    width: 100%;
+    flex-grow: 1; /* Que este elemento ocupe todo el espacio disponible en el contenedor */
+    gap: 0; /* Ajustar el espaciado entre elementos */
+  }
+  .h3-balance{
+    font-size: 1.2em;
+  }
+  .tablaDeBalance {
+    justify-content: space-between;
+    gap: 10px;
+  } 
+  .balance-Datos {
+    flex-direction: column;
+  }
+
+  .sub{
+    padding: 10px 12px 10px 10px;
+    gap: 2px;
+  }
+  .subImgCont {
+    width: 8%;
+  }
+  .subImg {
+    width: 100%;
+  }
+  .subText {
+    flex: 1;
+  }
+  .subButtons {
+    width: 15%;
+  }
+  .subButtons button {
+    padding: 0;
+  } 
+  .botonDelete {
+    padding: 3px;
   }
 }
 
