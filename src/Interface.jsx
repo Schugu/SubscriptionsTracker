@@ -1,6 +1,8 @@
 import { useState } from "react";
 import botonDelete from './assets/icons/botonDelete.svg'
 import botonEdit from './assets/icons/botonEdit.svg'
+import PDFComponent from "./components/PDFComponent.jsx"
+import { PDFDownloadLink } from "@react-pdf/renderer";
 
 export const Interface = ({ valorInput, setValorInput }) => {
   const [valorServicio, setValorServicio] = useState('');
@@ -14,6 +16,17 @@ export const Interface = ({ valorInput, setValorInput }) => {
   const [editedIndex, setEditedIndex] = useState(null);
 
   const valorDisp = valorInput - valorGastado;
+
+  const serviciosMapeados = {
+    netflix: 'Netflix',
+    disneyPlus: 'Disney+',
+    hboMax: 'HBO Max',
+    starPlus: 'Star+',
+    primeVideo: 'Prime Video',
+    spotify: 'Spotify',
+    appleTv: 'Apple TV',
+    youtubePremium: 'YouTube Premium'
+  };
 
   const handleChangeSelect = (e) => {
     setServicio(e.target.value);
@@ -92,17 +105,6 @@ export const Interface = ({ valorInput, setValorInput }) => {
 
 
   const subscripciones = () => {
-    const serviciosMapeados = {
-      netflix: 'Netflix',
-      disneyPlus: 'Disney+',
-      hboMax: 'HBO Max',
-      starPlus: 'Star+',
-      primeVideo: 'Prime Video',
-      spotify: 'Spotify',
-      appleTv: 'Apple TV',
-      youtubePremium: 'YouTube Premium'
-    };
-
     const handleDelete = (index, sub) => {
       const confirm = window.confirm(`Desea eliminar la suscripción ${serviciosMapeados[sub.servicio]}, con un valor de $${sub.valor}?`);
 
@@ -202,6 +204,18 @@ export const Interface = ({ valorInput, setValorInput }) => {
             />
             <input type="submit" value='Agregar' className="buttonForm boton-InterfaceActions"/>
           </form>
+          <section>
+            <h4>Descargar PDF</h4>
+            <PDFDownloadLink
+              document={<PDFComponent subs={subs} serviciosMapeados={serviciosMapeados}/>}
+              fileName="holaMundo.pdf"
+            >
+              {({ loading }) =>
+                loading ? ( <button>Loading Document...</button> )
+                        : ( <button>Download now!</button>)
+              }
+            </PDFDownloadLink>
+          </section>
       </div>
     </article>
   );
