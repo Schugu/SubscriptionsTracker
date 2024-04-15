@@ -1,7 +1,8 @@
 import { useState } from "react";
-import botonDelete from './assets/icons/botonDelete.svg'
-import botonEdit from './assets/icons/botonEdit.svg'
-import PDFComponent from "./components/PDFComponent.jsx"
+import './Interface.css'
+import botonDelete from '../../assets/icons/botonDelete.svg'
+import botonEdit from '../../assets/icons/botonEdit.svg'
+import PDFComponent from "../PDFComponent/PDFComponent.jsx"
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
 export const Interface = ({ valorInput, setValorInput }) => {

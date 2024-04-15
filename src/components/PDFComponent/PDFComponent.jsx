@@ -8,8 +8,6 @@ import {
   View
 } from '@react-pdf/renderer'
 
-
-
 function PDFComponent({
   subs,
   serviciosMapeados,

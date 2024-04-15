@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react'
-import { FomrAñadirPlata } from './FormAñadirPlata.jsx'
-import { Interface } from './Interface.jsx'
+import { FomrAñadirPlata } from './components/FormAñadirPlata/FormAñadirPlata.jsx'
+import { Interface } from './components/Interface/Interface.jsx'
 
 function App() {
   const [valorInput, setValorInput] = useState();
@@ -24,7 +24,6 @@ function App() {
   }
 
   const Portada = ()=> {
-    
     return (
       <section className='portadaSection'>
         <article className='portadaArticle'>
