@@ -30,7 +30,7 @@ export const FomrAñadirPlata = ({ onSendData }) => {
   const MensajeDeError = () => {
     if (isValid === false) {
       return (
-        <h4>ERROR!</h4>
+        <h4 className="mensajeDeErrorForm">Ingrese un valor valido!</h4>
       )
     }
   }
@@ -61,6 +61,7 @@ export const FomrAñadirPlata = ({ onSendData }) => {
         </div>
 
         <MensajeDeError />
+        <h6 className="poweredBy">Powered by <a href="https://github.com/Schugu" target="_BLANK">Schugu</a>.</h6>
       </form>
     </article>
 
