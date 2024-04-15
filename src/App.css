@@ -221,8 +221,8 @@
   border-radius: 50px;
   width: 100%;
   height: 70px;
-  padding: 20px;
-  gap: 20px;
+  padding: 10px 12px 10px 10px;
+  gap: 2px;
   color: black;
   box-shadow: rgba(202, 223, 251, 0.16) 0px 3px 6px, rgba(202, 223, 251, 0.23) 0px 3px 6px;
   transition: background-color 0.2s ease-in-out;
@@ -231,27 +231,36 @@
   background-color: #a9c3e4;
 }
 .subImgCont{
-  width: 20%;
+  width: 10%;
+  height: auto;
   pointer-events: none;
   user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.subImgCont {
+  width: 8%;
+  max-width: 50px; /* Ancho máximo del contenedor de la imagen */
+}
 .subImg {
-  width: 20%;
+  width: 100%; /* Asegúrate de que la imagen no exceda el contenedor */
+  max-width: 100%; /* Ancho máximo de la imagen */
+  height: auto; /* Mantén la proporción de aspecto */
 }
 .subText {
   width: 70%;
+  flex: 1;
 }
 .subText b {
   color: green;
 }
 
 .subButtons {
-  min-width: 10%;
+  width: 15%;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   user-select: none;
 }
@@ -261,8 +270,8 @@
   justify-content: center;
   border: none;
   background-color: transparent;
-  width: 50%;
-  height: 100%;
+  /* width: 50%; */
+  /* height: 100%; */
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
@@ -270,12 +279,14 @@
   background-color: #cadffb;
 }
 .botonEdit{ 
-  width: 100%;
-  padding: 2px;
+  /* width: 100%; */
+  /* padding: 2px; */
+  height: 1.4em;
 }
 .botonDelete {
-  padding: 5px;
-  width: 100%;
+  height: 1.3em;
+  padding: 2px;
+  /* width: 100%; */
 }
 
 /* Estilo de la barra de desplazamiento */
@@ -367,7 +378,10 @@
     padding: 0;
   } 
   .botonDelete {
-    padding: 3px;
+    height: 0.9em;
+  }
+  .botonEdit {
+    height: 0.9em;
   }
 }
 
@@ -377,5 +391,19 @@
   }
   .portadaForm {
     height: 50%;
+  }
+
+  .subButtons {
+    width: 10%;
+    flex-direction: column;
+  }
+  .subButtons button {
+    padding: 0;
+  } 
+  .botonDelete {
+    height: 0.9em;
+  }
+  .botonEdit {
+    height: 0.9em;
   }
 }
