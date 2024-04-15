@@ -103,8 +103,6 @@ export const Interface = ({ valorInput, setValorInput }) => {
     return {};
   }
 
-
-
   const subscripciones = () => {
     const handleDelete = (index, sub) => {
       const confirm = window.confirm(`Desea eliminar la suscripción ${serviciosMapeados[sub.servicio]}, con un valor de $${sub.valor}?`);
@@ -204,28 +202,30 @@ export const Interface = ({ valorInput, setValorInput }) => {
               id=""
               placeholder="$2.500"
             />
-            <input type="submit" value='Agregar' className="buttonForm boton-InterfaceActions" />
+            <input type="submit" value='Agregar' className="botonInterface" />
           </form>
         </article>
 
-        <section className="containerBotonPdf">
-          <PDFDownloadLink
-            document={
-              <PDFComponent
-                subs={subs}
-                serviciosMapeados={serviciosMapeados}
-                valorInput={valorInput}
-                valorDisp={valorDisp}
-                valorGastado={valorGastado}
-              />}
-            fileName="holaMundo.pdf"
-          >
-            {({ loading }) =>
-              loading ? (<button className="botonPdf">Loading Document...</button>)
-                : (<button className="botonPdf">Descargar PDF</button>)
-            }
-          </PDFDownloadLink>
-        </section>
+        <PDFDownloadLink
+          document={
+            <PDFComponent
+              subs={subs}
+              serviciosMapeados={serviciosMapeados}
+              valorInput={valorInput}
+              valorDisp={valorDisp}
+              valorGastado={valorGastado}
+            />}
+          fileName="holaMundo.pdf"
+        >
+          {({ loading }) =>
+            loading ? (<button
+                        className="botonInterface"
+                        >Loading...</button>)
+                    : (<button
+                         className="botonInterface"
+                        >Descargar PDF</button>)
+          }
+        </PDFDownloadLink>
       </div>
     </article>
   );

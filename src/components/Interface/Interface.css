@@ -76,47 +76,38 @@
 .input-formInterfaceActions {
   padding-left: 10px;
 }
-.boton-InterfaceActions {
-  text-align: center;
-}
 .h3-interfaceActions {
   text-align: center;
 }
-.containerBotonPdf {
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.botonPdf {
+/* BOTON */
+.botonInterface {
   width: 100%;
-  text-align: center;
+  align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #FF5733 0, #FFC300 100%);
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
   color: #fff;
   cursor: pointer;
   height: 48px;
   justify-content: center;
   line-height: 1;
+  padding: 0 16px;
+  text-align: center;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
   font-size: 18px;
-  text-shadow: 1px 1px 5px black;
-  padding-left: 16px;
-  padding-right: 16px;
 }
-.botonPdf:focus {
-  box-shadow: #FF5733 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #FF5733 0 -3px 0 inset;
+.botonInterface:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
-.botonPdf:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #FF5733 0 -3px 0 inset;
+.botonInterface:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
 }
-.botonPdf:active {
-  box-shadow: #FF5733 0 3px 7px inset;
+.botonInterface:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
 }
 
 /* Parte 3 */

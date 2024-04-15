@@ -40,8 +40,7 @@
   height: 48px;
   justify-content: center;
   line-height: 1;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px;
   text-align: left;
   text-decoration: none;
   user-select: none;
