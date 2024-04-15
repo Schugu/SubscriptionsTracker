@@ -207,7 +207,14 @@ export const Interface = ({ valorInput, setValorInput }) => {
           <section>
             <h4>Descargar PDF</h4>
             <PDFDownloadLink
-              document={<PDFComponent subs={subs} serviciosMapeados={serviciosMapeados}/>}
+              document={
+                <PDFComponent 
+                  subs={subs} 
+                  serviciosMapeados={serviciosMapeados}
+                  valorInput={valorInput}
+                  valorDisp={valorDisp}
+                  valorGastado={valorGastado}
+                />}
               fileName="holaMundo.pdf"
             >
               {({ loading }) =>
