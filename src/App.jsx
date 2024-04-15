@@ -1,7 +1,7 @@
-import './App.css'
-import { useState } from 'react'
-import { FomrAñadirPlata } from './components/FormAñadirPlata/FormAñadirPlata.jsx'
-import { Interface } from './components/Interface/Interface.jsx'
+import './App.css';
+import { useState } from 'react';
+import { Interface } from './components/Interface/Interface.jsx';
+import Portada from './components/Portada/Portada.jsx';
 
 function App() {
   const [valorInput, setValorInput] = useState();
@@ -12,35 +12,14 @@ function App() {
     setIsValid(valid);
   };
 
-  const MostrarElemento = ()=> {
-    return (
-      isValid 
-        ? <Interface 
-            valorInput={valorInput}
-            setValorInput={setValorInput} 
-          /> 
-        : <Portada/>
-    )
-  }
-
-  const Portada = ()=> {
-    return (
-      <section className='portadaSection'>
-        <article className='portadaArticle'>
-          <h2 className='h2Portada'>Pagá tus servicios desde la comodidad de tu hogar</h2>
-        </article>
-        <FomrAñadirPlata onSendData={handleSendData} />
-      </section>
-    )
-  }
-
   return (
     <main className='main'>
-      
-      <MostrarElemento />
-
+      {isValid 
+        ? <Interface valorInput={valorInput} setValorInput={setValorInput} />
+        : <Portada onSendData={handleSendData} />
+      }
     </main>
-  )
+  );
 }
 
-export default App
+export default App;

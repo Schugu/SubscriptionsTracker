@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types"; // Importa PropTypes
 import './FormAñadirPlata.css'
 
-export const FomrAñadirPlata = ({ onSendData }) => {
+export const FormAñadirPlata = ({ onSendData }) => {
   const [inputValue, setInputValue] = useState('');
   const [isValid, setIsValid] = useState(null);
 
@@ -70,6 +70,6 @@ export const FomrAñadirPlata = ({ onSendData }) => {
 }
 
 // Agrega validación de props
-FomrAñadirPlata.propTypes = {
+FormAñadirPlata.propTypes = {
   onSendData: PropTypes.func.isRequired, // Asegura que onSendData sea una función y sea requerida
 };
