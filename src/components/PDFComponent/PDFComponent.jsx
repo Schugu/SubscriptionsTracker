@@ -147,9 +147,8 @@ function PDFComponent({
           <View style={styles.section}>
             <Text style={styles.subtitulo}>Agradecimientos:</Text>
             <Text style={styles.parrafo}>
-              Gracias por usar esta aplicación. Derechos reservados del codigo de la
-              aplicación a Gracias por usar esta aplicación. Derechos reservados del código de la 
-          aplicación a{' '}
+              Gracias por usar esta aplicación. Derechos reservados del código de la 
+              aplicación a{' '}
           <Link src="https://github.com/Schugu" style={{ color: 'blue' }}>
             Leandro Daniel Schugurensky
           </Link>.

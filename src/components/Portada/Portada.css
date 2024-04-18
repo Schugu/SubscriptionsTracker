@@ -17,7 +17,7 @@
   text-align: center;
   padding-top: 20px;
   
-  background-image: url(../public/portada.png);
+  background-image: url('/public/portada/portada.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

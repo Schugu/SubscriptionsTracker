@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import './Interface.css'
-import botonDelete from '../../assets/icons/botonDelete.svg'
-import botonEdit from '../../assets/icons/botonEdit.svg'
+// import botonDelete from 'icons/botonDelete.svg'
+// import botonEdit from 'icons/botonEdit.svg'
 import PDFComponent from "../PDFComponent/PDFComponent.jsx"
 import { PDFDownloadLink } from "@react-pdf/renderer";
 
@@ -130,7 +130,7 @@ export const Interface = ({ valorInput }) => {
         {subs.map((sub, index) => (
           <div key={index} className="sub">
             <section className="subImgCont">
-              <img src={`../public/subs/${sub.servicio}.svg`} alt={sub.servicio} className="subImg" />
+              <img src={`subs/${sub.servicio}.svg`} alt={sub.servicio} className="subImg" />
             </section>
 
             <section className="subText">
@@ -142,12 +142,12 @@ export const Interface = ({ valorInput }) => {
             <section className="subButtons">
               <button
                 onClick={() => handleEdit(index, sub)}>
-                <img src={botonEdit} alt="BotonEdit" className="botonEdit" />
+                <img src='icons/botonEdit.svg' alt="BotonEdit" className="botonEdit" />
               </button>
 
               <button
                 onClick={() => handleDelete(index, sub)}>
-                <img src={botonDelete} alt="botonDelete" className="botonDelete" />
+                <img src='icons/botonDelete.svg' alt="botonDelete" className="botonDelete" />
               </button>
             </section>
           </div>
