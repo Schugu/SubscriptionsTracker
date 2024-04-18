@@ -31,38 +31,51 @@ export const FormAñadirPlata = ({ onSendData }) => {
   const MensajeDeError = () => {
     if (isValid === false) {
       return (
-        <h4 className="mensajeDeErrorForm">Ingrese un valor valido!</h4>
+        <h4 
+          className="mensajeDeErrorForm"
+          tabIndex='6'
+        >Ingrese un valor valido!</h4>
       )
     }
   }
 
   return (
     <article className="portadaForm">
-      <h2 className='portadaFormTitulo'>Subscription Tracker</h2>
+      <h2 className='portadaFormTitulo' tabIndex='1'>Subscription Tracker</h2>
 
       <form
         className="formAddMoney"
         onSubmit={handleSubmit}
       >
-        <h2 className="h2FormAddMoney">Presupuesto</h2>
+        <h2 className="h2FormAddMoney" tabIndex='3'>Presupuesto</h2>
 
         <div className="inputAndButtonForm">
           <input
+            tabIndex='4'
             className="inputForm"
             type="text"
             placeholder="Ej: $2500"
+            aria-label="Ingrese un monto"
             value={inputValue}
             onChange={handleChange}
             style={editarError()}
           />
           <button
+            tabIndex='5'
             className="buttonForm"
+            aria-label="Enviar monto"
             type="submit"
           >Agregar</button>
         </div>
 
         <MensajeDeError />
-        <h6 className="poweredBy">Powered by <a href="https://github.com/Schugu" target="_BLANK">Schugu</a>.</h6>
+        <h6 
+          tabIndex='7'
+          className="poweredBy"
+        >Powered by 
+          <a href="https://github.com/Schugu" 
+            target="_BLANK"
+          >Schugu</a>.</h6>
       </form>
     </article>
 

@@ -134,19 +134,25 @@ export const Interface = ({ valorInput }) => {
             </section>
 
             <section className="subText">
-              <span>
+              <span tabIndex={`1${index}1`}>
                 Servicio: {serviciosMapeados[sub.servicio]}: <b>${sub.valor}</b>.
               </span>
             </section>
 
             <section className="subButtons">
               <button
-                onClick={() => handleEdit(index, sub)}>
+                onClick={() => handleEdit(index, sub)}
+                tabIndex={`1${index}2`}
+                aria-label="Editar Elemento"
+              >
                 <img src='icons/botonEdit.svg' alt="BotonEdit" className="botonEdit" />
               </button>
 
               <button
-                onClick={() => handleDelete(index, sub)}>
+                onClick={() => handleDelete(index, sub)}
+                tabIndex={`1${index}3`}
+                aria-label="Borrar elemento"
+              >
                 <img src='icons/botonDelete.svg' alt="botonDelete" className="botonDelete" />
               </button>
             </section>
@@ -160,11 +166,23 @@ export const Interface = ({ valorInput }) => {
     <article className="contenedorInterface">
       <div className="balanceAndSubs">
         <section className="tablaDeBalance">
-          <h3 className="h3-balance">Balance</h3>
+          <h3
+            className="h3-balance"
+            tabIndex='1'
+          >Balance</h3>
           <article className="balance-Datos">
-            <h3 className="h3-Balance">Presupuesto: ${valorInput}</h3>
-            <h3 className="h3-Balance">Disponible: ${valorDisp}</h3>
-            <h3 className="h3-Balance">Gastado: ${valorGastado}</h3>
+            <h3
+              className="h3-Balance"
+              tabIndex='2'
+            >Presupuesto: ${valorInput}</h3>
+            <h3
+              className="h3-Balance"
+              tabIndex='3'
+            >Disponible: ${valorDisp}</h3>
+            <h3
+              className="h3-Balance"
+              tabIndex='4'
+            >Gastado: ${valorGastado}</h3>
           </article>
         </section>
 
@@ -173,11 +191,16 @@ export const Interface = ({ valorInput }) => {
 
       <div className="interfaceActions">
         <article className="interfaceActionsInterno">
-          <h3 className="h3-interfaceActions">Agregar servicio</h3>
+          <h3
+            className="h3-interfaceActions"
+            tabIndex='5'
+          >Agregar servicio</h3>
           <form
             className="formInterfaceActions"
             onSubmit={handleSubmit}>
             <select
+              tabIndex='6'
+              aria-label="Seleccione un servicio"
               value={servicio}
               onChange={handleChangeSelect}
               className="select-formInterfaceActions"
@@ -194,6 +217,8 @@ export const Interface = ({ valorInput }) => {
               <option value="youtubePremium">Youtube Premium</option>
             </select>
             <input
+              tabIndex='7'
+              aria-label="Ingrese el valor del servicio"
               style={editarError2()}
               className="input-formInterfaceActions"
               value={valorServicio}
@@ -203,7 +228,13 @@ export const Interface = ({ valorInput }) => {
               id=""
               placeholder="$2.500"
             />
-            <input type="submit" value='Agregar' className="botonInterface" />
+            <input 
+              type="submit" 
+              value='Agregar' 
+              className="botonInterface" 
+              tabIndex='8'
+              aria-label="Agregar servicio"
+            />
           </form>
         </article>
 
@@ -216,15 +247,16 @@ export const Interface = ({ valorInput }) => {
               valorDisp={valorDisp}
               valorGastado={valorGastado}
             />}
-          fileName="holaMundo.pdf"
+          fileName="reciboSubs.pdf"
         >
           {({ loading }) =>
             loading ? (<button
-                        className="botonInterface"
-                        >Loading...</button>)
-                    : (<button
-                         className="botonInterface"
-                        >Descargar PDF</button>)
+              className="botonInterface"
+            >Loading...</button>)
+              : (<button
+                tabIndex='10000'
+                aria-label="Seleccione un servicio" className="botonInterface"
+              >Descargar PDF</button>)
           }
         </PDFDownloadLink>
       </div>
@@ -232,5 +264,5 @@ export const Interface = ({ valorInput }) => {
   );
 }
 Interface.propTypes = {
-  valorInput: PropTypes.any.isRequired 
+  valorInput: PropTypes.any.isRequired
 }

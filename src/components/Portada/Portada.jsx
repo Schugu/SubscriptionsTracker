@@ -6,7 +6,10 @@ const Portada = ({ onSendData }) => {
   return (
     <section className='portadaSection'>
       <article className='portadaArticle'>
-        <h2 className='h2Portada'>Pagá tus servicios desde la comodidad de tu hogar</h2>
+        <h2 
+          className='h2Portada' 
+          tabIndex='2'
+        >Pagá tus servicios desde la comodidad de tu hogar</h2>
       </article>
       <FormAñadirPlata onSendData={onSendData} />
     </section>
