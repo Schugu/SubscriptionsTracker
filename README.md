@@ -1,4 +1,4 @@
-<h1 align='center'>🌟 Página Subscriptions Tracker  ✅🌟</h1>
+<h1 align='center'>🌟 Página Subscriptions Tracker  📋🌟</h1>
 
 > Practica de HTML, CSS, JavaScript y React. ✨
 
@@ -55,8 +55,8 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 ------------
 
 ### Capturas de pantalla 📸
-<img src='public/CapturaDePantalla.gif' alt='CapturaDePantalla1'>
-<img src='public/CapturaDePantalla2.gif' alt='CapturaDePantalla2'>
+<img src='public/GifDePantalla1.gif' alt='GifDePantalla1'>
+<img src='public/GifDePantalla2.gif' alt='GifDePantalla2'>
 
 
 
