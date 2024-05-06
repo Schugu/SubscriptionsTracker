@@ -55,7 +55,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 ------------
 
 ### Capturas de pantalla 📸
-<img src='public/GifDePantalla.gif' alt='GifDePantalla1'>
+<img src='public/GifDePantalla1.gif' alt='GifDePantalla1'>
 <img src='public/CapturaDePantalla2.gif' alt='CapturaDePantalla2'>
 
 
