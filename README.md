@@ -1,4 +1,4 @@
-<h1 align='center'>🌟 Página Subscriptions Tracker  ✅🌟</h1>
+<h1 align='center'>🌟 Página Subscriptions Tracker  📋🌟</h1>
 
 > Practica de HTML, CSS, JavaScript y React. ✨
 
