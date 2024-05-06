@@ -4,8 +4,8 @@
 
 🎯 Objetivo: Crear una página para trackear subscripciones.
 
-Esta idea de proyecto está inspirada en el video "[Subscriptions Tracker - Suscripciones App - Streaming - React Js - JavaScript - ECMA6](https://www.youtube.com/@blackcode2)"
-Aunque me guié por la idea presentada en el video, he desarrollado esta página a mi manera, añadiendo mis propios enfoques y personalizaciones. Puedes encontrar el video en este enlace [aquí](https://youtu.be/ermKvCAtiKA?si=U8vqK_Svsx4hMTu3 "Click aquí").
+Esta idea de proyecto está inspirada en el video "[Subscriptions Tracker - Suscripciones App - Streaming - React Js - JavaScript - ECMA6](https://youtu.be/ermKvCAtiKA?si=U8vqK_Svsx4hMTu3)" de [Black code](https://www.youtube.com/@blackcode2 "Black code").
+Aunque me guié por la idea presentada en el video, he desarrollado esta página a mi manera, añadiendo mis propios enfoques y personalizaciones. 
 
 ------------
 
